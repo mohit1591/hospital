@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Leasor Print</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+	page {
+	  background: white;
+	  display: block;
+	  margin: 0 auto;
+	  margin-bottom: 0.5cm;
+	  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+	}
+	page[size="A4"] {  
+	  width: 21cm;
+	  min-height: 29.7cm;  
+	  padding: 3em;
+	  font-size:13px;
+	}
+</style>
+</head>
+<body style="background: rgb(204,204,204);font-family:sans-serif, Arial;color:#333;">
+
+	<page size="A4">
+		
+		<table width="100%" cellpadding="4px" cellspacing="0" border="0" style="border-collapse:collapse;">
+			<tr>
+				<td valign="top" align="left">
+					<table  cellspacing="0" cellpadding="0px">
+						<tr>
+							<th align="left" valign="top"><h2 style="margin: 0px;">Sara Technologies Pvt. Ltd.</h2></th>
+						</tr>
+						<tr>
+							<td align="left" valign="top"><i>Touching IT needs...</i></td>
+						</tr>
+					</table>
+				</td>
+
+				<td valign="top" align="left" width="35%">
+					<table width="100%" cellspacing="0" cellpadding="4px">
+						<tr>
+							<th align="left" valign="top"><h1 style="margin: 0px;">MEDICINE INVOICE</h1></th>
+						</tr>
+					</table>
+				</td>
+			</tr>
+
+			<tr>
+				<td valign="top" align="left">
+					<table  cellspacing="0" cellpadding="0px" border="0" width="100%">
+						<tr>
+							<th align="left" valign="top"><u>Street Address:</u></th>
+						</tr>
+						<tr>
+							<td align="left" valign="top">
+							City, ST Zip Code<br>
+							<span>Phone: 405,555,0190</span>
+							<span style="margin-left:3%;"> Fax: 405,555,0191</span>
+							</td>
+						</tr>
+					</table>
+				</td>
+
+				<td valign="top" align="left" width="35%">
+					<table width="100%" cellspacing="0" cellpadding="4px">
+						<tr>
+							<th align="left" valign="top">Date:</th>
+							<td align="left" valign="top">{date}</td>
+						</tr>
+						<tr>
+							<th align="left" valign="top">INVOICE:</th>
+							<td align="left" valign="top">{invoice_no}</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+
+
+
+
+		<table width="100%" cellpadding="4px" cellspacing="0" border="0" style="border-collapse: collapse;margin-top:2%">
+			<tr>
+				<th align="left" valign="top" width="15%">Bill To:</th>
+				<td align="left" valign="top">{patient_name}</td>
+			</tr>
+			<tr>
+				<th align="left" valign="top" width="15%">Name:</th>
+				<td align="left" valign="top">{sales_name}</td>
+			</tr>
+		</table>
+
+
+
+
+		<table width="100%" cellpadding="4px" cellspacing="0" border="1" style="border-collapse: collapse;margin-top:2%">
+			<tr>
+				<th align="left" valign="top" width="8%">Sr. No.:</th>
+				<th align="left" valign="top" width="">Description</th>
+				<th align="left" valign="top" width="10%">Quantity</th>
+				<th align="left" valign="top" width="10%">Basic Price</th>
+				<th align="left" valign="top" width="12%">Total</th>
+			</tr>
+			{start_loop}
+			<tr>
+				<td align="left" valign="top" width="8%" style="font-size:12px;height:3in">{s_no}</td>
+				<td align="left" valign="top" style="font-size:12px;height:3in">{medicine_name}.</td>
+				<td align="right" valign="top" style="font-size:12px;height:3in">{quantity}</td>
+				<td align="right" valign="top" style="font-size:12px;height:3in">{mrp}</td>
+				<td align="right" valign="top" style="font-size:12px;height:3in">{total_amount}</td>
+			</tr>
+			{end_loop}
+		</table>
+		
+		
+		
+		
+		<div style="float:left;width:100%;min-height:auto;margin:5% 0;border:1px solid #111;display:block;font-size:12px;">
+			<!-- Header -->
+			<div style="float:left;width:10%;height:100%;border-bottom:1px solid #000;border-right:1px solid #000;font-weight:bold;padding:5px;">Sr.No.</div>
+			<div style="float:left;width:58%;height:100%;border-bottom:1px solid #000;border-right:1px solid #000;font-weight:bold;padding:5px;border-left:none;">Description</div>
+			<div style="float:left;width:10%;height:100%;border-bottom:1px solid #000;border-right:1px solid #000;font-weight:bold;padding:5px;border-left:none;">Quantity</div>
+			<div style="float:left;width:12%;height:100%;border-bottom:1px solid #000;border-right:1px solid #000;font-weight:bold;padding:5px;border-left:none;">Base Price</div>
+			<div style="float:left;width:10%;height:100%;border-bottom:1px solid #000;font-weight:bold;padding:5px;border-left:none;">Total</div>
+			
+			{start_loop}
+			<!-- body -->
+			<div style="float:left;width:100%;height:100%;border-botto:1px solid #000;font-weight:normal;">
+				<div style="float:left;width:10%;height:100%;line-height:22px;border-right:1px solid #000;text-indent:1%;">1</div>
+				<div style="float:left;width:58%;height:100%;line-height:22px;border-right:1px solid #000;text-indent:1%;">1Tabs should be give.</div>
+				<div style="float:left;width:10%;height:100%;line-height:22px;border-right:1px solid #000;text-align:right;">10</div>
+				<div style="float:left;width:12%;height:100%;line-height:22px;border-right:1px solid #000;text-align:right;">100</div>
+				<div style="float:left;width:10%;height:100%;line-height:22px;text-align:right;">1000</div>
+			</div> <!-- body -->
+			<div style="float:left;width:100%;height:100%;border-botto:1px solid #000;font-weight:normal;">
+				<div style="float:left;width:10%;height:100%;line-height:22px;border-right:1px solid #000;text-indent:1%;">1</div>
+				<div style="float:left;width:58%;height:100%;line-height:22px;border-right:1px solid #000;text-indent:1%;">1Tabs should be give.</div>
+				<div style="float:left;width:10%;height:100%;line-height:22px;border-right:1px solid #000;text-align:right;">10</div>
+				<div style="float:left;width:12%;height:100%;line-height:22px;border-right:1px solid #000;text-align:right;">100</div>
+				<div style="float:left;width:10%;height:100%;line-height:22px;text-align:right;">1000</div>
+			</div> <!-- body -->
+			{end_loop}
+			
+			
+			<!-- don't delete and edited in this div -->
+			<div style="float:left;width:100%;height:200px;border-botto:1px solid #000;font-weight:normal;">
+				<div style="float:left;width:10%;height:100%;line-height:22px;border-right:1px solid #000;text-indent:1%;"></div>
+				<div style="float:left;width:58%;height:100%;line-height:22px;border-right:1px solid #000;text-indent:1%;"></div>
+				<div style="float:left;width:10%;height:100%;line-height:22px;border-right:1px solid #000;text-align:right;"></div>
+				<div style="float:left;width:12%;height:100%;line-height:22px;border-right:1px solid #000;text-align:right;"></div>
+				<div style="float:left;width:10%;height:100%;line-height:22px;text-align:right;"></div>
+			</div> 
+			<!-- don't delete and edited in this div -->
+		</div>
+
+
+
+
+		<table width="100%" cellpadding="4px" cellspacing="0" border="0" style="border-collapse: collapse;margin-top:1%">
+			<tr>
+				<td align="left" valign="top" width="68%" style="font-size:15px;"></td>
+				<th align="left" valign="top" width="20%" style="font-size:12px;border: 1px solid #000;">Sub Total</th>
+				<td align="right" valign="top" style="font-size:13px;border: 1px solid #000;">{gross_total_amount}</td>
+			</tr>
+			<tr>
+				<td align="left" valign="top" width="68%" style="font-size:15px;"></td>
+				<th align="left" valign="top" width="20%" style="font-size:12px;border: 1px solid #000;">Vat%</th>
+				<td align="right" valign="top" style="font-size:13px;border: 1px solid #000;">{vat}</td>
+			</tr>
+			<tr>
+				<td align="left" valign="top" width="68%" style="font-size:15px;"></td>
+				<th align="left" valign="top" width="20%" style="font-size:12px;border: 1px solid #000;">Discount%</th>
+				<td align="right" valign="top" style="font-size:13px;border: 1px solid #000;">{discount}</td>
+			</tr>
+			
+			<tr>
+				<td align="left" valign="top" width="68%" style="font-size:15px;"></td>
+				<th align="left" valign="top" width="20%" style="font-size:12px;border: 1px solid #000;">Total</th>
+				<td align="right" valign="top" style="font-size:13px;border: 1px solid #000;">{net_amount}</td>
+			</tr>
+			<tr>
+				<td align="left" valign="top" width="68%" style="font-size:15px;"></td>
+				<th align="left" valign="top" width="20%" style="font-size:12px;border: 1px solid #000;">Paid</th>
+				<td align="right" valign="top" style="font-size:13px;border: 1px solid #000;">{paid_amount}</td>
+			</tr>
+			<tr>
+				<td align="left" valign="top" width="68%" style="font-size:15px;"></td>
+				<th align="left" valign="top" width="20%" style="font-size:12px;border: 1px solid #000;">TOTAL DUE</th>
+				<td align="right" valign="top" style="font-size:13px;border: 1px solid #000;">{balance}</td>
+			</tr>
+		</table>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+	</page>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+/* menu for dashboard side menu */
+ul.main-menu{float:left;list-style: none;padding-left:0;position: relative;}
+ul.main-menu li{float:left;margin-left:15px;}
+ul.main-menu li a{height:100%;font:bold 13px/30px arial;text-decoration:none;outline:0;color:#FFF;}
+ul.main-menu li a:hover{color:#fff;}
+ul.main-menu li a img{margin-top:0.1em;}
+#btn,#btn2{display:none;}
+ul.main-menu li .box-one{float:left;width:100px;min-height:200px;background:#555;margin-top:30px;position:absolute;}
+/* menu for all desktop  */
+/* extra small devices (mobile 360px upto) */
+@media (max-width:360px){.dash,.time{text-align: center;}
+/*for menu*/
+#menu {float:left;width:100%;height:auto;background:#b64a30;}
+#menu ul.main-menu{float:left;width:100%;height:auto;padding:10px;}
+#menu ul.main-menu li{float:left;width:100%;border-bottom:1px solid rgba(0,0,0,0.1);margin-left:0px;padding-left:0.1em;}
+#menu ul.main-menu li a{display:block;}
+#menu ul.main-menu li a > img{padding-bottom:1em;}
+#btn{float:left;width:50%;height:30px;font:bold 13px/30px arial;color:#FFF;display:block;}
+#btn2{float:right;width:;height:30px;font:bold 20px/30px arial;color:#FFF;text-align:right;cursor:pointer;display:block;}
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width:768px @screen-sm-min) {
+}
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) { ... }
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) { ... }
+/*bootstrap menu*/

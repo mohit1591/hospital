@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test Report</title>
+<style>
+	page {
+	  background: white;
+	  display: block;
+	  margin: 0 auto;
+	  margin-bottom: 0.5cm;
+	  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+	}
+	page[size="A4"] {  
+	  width: 21cm;
+	  height: 29.7cm;  
+	  padding:5em  3em;
+	  font-size:13px;
+	}
+</style>
+</head>
+<body style="background: rgb(204,204,204);font-family:sans-serif, Arial;color:#333;font-size:13px;">
+
+	<page size="A4">
+		
+		<table width="100%" cellpadding="4px" cellspacing="0" border="0" style="border-collapse:collapse;">
+			<tr>
+				<td width="30%"><img src="logo.png" width="120"></td>
+				<td width="40%" align="center">
+					<div style="display:block;font-size:20px;">HMAS</div>
+					<div style="display:block;font-size:px;">E-156, Sector-63, Noida</div>
+					<div style="display:block;font-size:px;">+91-94733641407</div>
+					<div style="display:block;font-size:px;">None</div>
+				</td>
+				<td width="30%"></td>
+			</tr>
+		</table>
+		
+		<div style="display:block;font-size:15px;text-align:center;text-decoration:underline;"><b>Operation Receipt</b></div>
+		<div style="display:block;border-top:2px solid black;margin-top:10px;"></div> <!-- border-top -->
+		
+		<table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">
+			<tr>
+				<td width="50%" align="left" valign="top">
+					<table width="100%" cellpadding="4" cellspacing="0" border="0" style="border-collapse:collapse;margin-top:5px;">
+						<tr>
+							<th width="50%" align="left">Patient Reg. No.:</th>
+							<td width="50%" align="left">{pateint_reg_no}</td>
+						</tr>
+						<tr>
+							<th width="50%" align="left">Patient Name:</th>
+							<td width="50%" align="left">{patient_name}</td>
+						</tr>
+						<tr>
+							<th width="50%" align="left">Mobile No.:</th>
+							<td width="50%" align="left">{mobile_no}</td>
+						</tr>
+						<tr>
+							<th width="50%" align="left">Gender/Age:</th>
+							<td width="50%" align="left">M/23Years</td>
+						</tr>
+					</table>
+				</td>
+				<td width="50%" align="left" valign="top">
+					<table width="100%" cellpadding="4" cellspacing="0" border="0" style="border-collapse:collapse;margin-top:5px;">
+						<tr>
+							<th width="50%" align="left">IPD No.:</th>
+							<td width="50%" align="left">{ipd_no}</td>
+						</tr>
+						<tr>
+							<th width="50%" align="left">Reciept Date:</th>
+							<td width="50%" align="left">{reciept_date}</td>
+						</tr>
+						<tr>
+							<th width="50%" align="left">Room No.:</th>
+							<td width="50%" align="left">{room_no}</td>
+						</tr>
+						<tr>
+							<th width="50%" align="left">Bed No.:</th>
+							<td width="50%" align="left">{bed_no}</td>
+						</tr>
+						<tr>
+							<th width="50%" align="left">Patient Address:</th>
+							<td width="50%" align="left">{pateint_address}</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		
+		<div style="display:block;border-top:2px solid black;margin-top:10px;"></div> <!-- border-bottom -->
+		
+		<div style="display:block;margin-top:10px;">
+			<b>Operation Date and Time:</b> <span>{operation_date_time}</span>
+		</div>
+		
+		<div style="display:block;margin-top:5px;">
+			<b>Dcotor Name:</b> <span>{doctor_name}</span>
+		</div>
+		
+		<table width="100%" cellpadding="4" cellspacing="0" border="1" style="border-collapse:collapse;margin-top:5px;border:2px solid black;">
+			<thead style="border:2px solid black;">
+				<tr>
+					<th width="20%" align="center" style="border:2px solid black;">Package Name</th>
+					<th width="20%" align="center" style="border:2px solid black;">Package Type</th>
+					<th width="20%" align="center" style="border:2px solid black;">Package Days</th>
+					<th width="20%" align="center" style="border:2px solid black;">Package Amount</th>
+					<th width="20%" align="center" style="border:2px solid black;">Package Remarks</th>
+				</tr>
+			</thead>
+			<tbody style="border:2px solid black;">
+				<tr>
+					<td width="20%" align="left" style="border:2px solid black;">{package_name}</td>
+					<td width="20%" align="left" style="border:2px solid black;">{package_type}</td>
+					<td width="20%" align="left" style="border:2px solid black;">{package_days}</td>
+					<td width="20%" align="left" style="border:2px solid black;">{package_amount}</td>
+					<td width="20%" align="left" style="border:2px solid black;">{package_remarks}</td>
+				</tr>
+			</tbody>
+		</table>
+		<div style="display:block;margin-top:10px;">
+			<b>Note:</b> <span>{note}</span>
+		</div>
+		
+		<div style="display:block;margin-top:5px;">
+			<b>Operation:</b> <span>{operation}</span>
+		</div>
+		
+		<div style="display:block;margin-top:15px;text-align:right">
+			<b>Signature:</b><br>
+			<b>{signature}</b>
+		</div>
+
+
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+	</page>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Sms_config extends CI_Controller {
+ 
+  function __construct() 
+  {
+      parent::__construct();	
+      auth_users();  
+      $this->load->model('sms_config/sms_config_model','sms_configs');
+      $this->load->library('form_validation');
+  }
+
+    
+   public function index()
+   {
+        unauthorise_permission(103,645);
+        $data['page_title'] = 'SMS  Config Settings'; 
+        $post = $this->input->post();
+
+        if(!empty($post))
+        { 
+            $this->sms_configs->save();
+            echo 'Your SMS config settings successfully updated.';
+            return false;
+        }
+        $sms_setting_list= $this->sms_configs->get_master_unique();
+        $data['url']  = $sms_setting_list->url;
+        $data['id']  = $sms_setting_list->id;
+        $data['variables'] = '{mobile_no},{message}';
+        $this->load->view('sms_config/add',$data);
+    } 
+
+
+ } 
+ ?>

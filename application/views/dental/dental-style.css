@@ -1,0 +1,24 @@
+.dental-chart{padding:0.5em;}
+  ul.dental-tab{list-style: none;padding: 0px;margin: 0 auto;}
+  ul.dental-tab li{float:left;padding:7px 17px!important;background: #629c44;text-align:center;margin-left:4px;border-radius:4px;box-shadow: 2px 2px #ccc;}
+  ul.dental-tab li a{text-decoration: none;color:#fff;}
+  ul.dental-tab li:hover{background: #4e7c36;color:#fff;}
+  ul.dental-tab .active{background: #8dc171;}
+  .box-left{padding:1em;width:100%;}
+  .box-left select{width:100%;padding: 4px;margin-bottom: 3px;}
+  .box-left input{width:100%;margin-bottom: 3px;}
+  .box-left button{width:100%;border: none;text-align: center;padding: 3px;margin-bottom: 5px;border-radius:4px;box-shadow: 0px 1px 2px #4e7c36;}
+  .theme-color{background: #629c44;color:#fff;}
+  .duration-box select{width:49%;}
+  .btn-s-e{width:100%;text-align: center;padding:4px;margin-bottom: 2px;border: none;border-radius: 4px;}
+
+  .table-box{padding:1em;width:100%;}
+  .btn-box{padding: 1em 5px;}
+  .dent-type{border:1px solid #666;padding: 1em;}
+  .btn-box1{width:150px;padding:4px;background: green;color:#fff;border-radius: 4px;text-align:center;margin:8px 0;}
+  .btn-flex{display: flex;}
+.btn-flex div{flex:1;}
+.btn-text{text-align:center;margin-bottom:3px;}
+.btn-heading{width:100%;margin: 0 auto;}
+.btn-box2{width:150px;padding:4px;background: green;color:#fff;border-radius: 4px;text-align:center;margin:8px auto;}
+.btn-text{text-align:center;margin-bottom:3px;}

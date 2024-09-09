@@ -1,0 +1,30 @@
+
+
+
+.teeth-box{width:100%;float: left;border:1px solid #ccc;margin-bottom: 2em;}
+.teeth-head{border-bottom: 2px solid #ccc;margin-bottom: 2em;}
+
+ul.teeth-li{list-style:none;padding:0px;margin:0px;}
+ul.teeth-li li{padding: 3px;margin-left: 2px;float: left;min-width:12%;border:1px solid #ddd;text-align: center;}
+ul.teeth-li li img{text-align: center;}
+
+
+ul.teeth-num{list-style:none;padding:0px;margin:0px;}
+ul.teeth-num li{padding: 3px;margin-left: 2px;float: left;min-width:12%;*border:1px solid #ddd;text-align: center;}
+ul.teeth-num li img{text-align: center;}
+
+
+
+ul.teeth-li2{list-style:none;padding:0px;margin:0px;}
+ul.teeth-li2 li{padding: 3px;margin-left: 2px;float: left;min-width:19%;border:1px solid #ddd;text-align: center;}
+ul.teeth-li2 li img{text-align: center;}
+
+.teeth-img-box{width:100%;float: left;}
+
+.b-right{border-right:1px solid #333;}
+.b-bottom{border-bottom:1px solid #333;}
+.well{background: none;}
+
+ul.teeth-num1{list-style:none;padding:0px;margin:0px;}
+ul.teeth-num1 li{padding: 3px;margin-left: 2px;float: left;min-width:19%;*border:1px solid #ddd;text-align: center;}
+ul.teeth-num1 li img{text-align: center;}

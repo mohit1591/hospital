@@ -1,0 +1,148 @@
+<div class="modal-dialog">
+<div class="overlay-loader" id="overlay-loader">
+        <img src="<?php echo ROOT_IMAGES_PATH; ?>loader.gif" class="aj-loader">
+    </div>
+  <div class="modal-content"> 
+  <form id="interpretation_form"  class="form-inline">
+  <input type="hidden" name="booking_id" id="booking_id" value="<?php echo $form_data['booking_id']; ?>" /> 
+  <input type="hidden" name="test_id" id="test_id" value="<?php echo $form_data['test_id']; ?>" /> 
+      <div class="modal-header">
+          <button type="button" class="close"  data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h4><?php echo $page_title; ?></h4> 
+      </div> 
+      <div class="modal-body">   
+          <div class="row">
+            <div class="col-md-12 m-b1">
+              <div class="row"> 
+                <div class="col-md-12">
+                    <textarea name="interpretation_data" class="interpretation_data" id="interpretation_data">
+                      <?php echo $form_data['interpretation_data']; ?>
+                    </textarea>
+                    
+                    <?php if(!empty($form_error)){ echo form_error('interpretation_data'); } ?>
+                </div>
+              </div> <!-- innerrow -->
+            </div> <!-- 12 -->
+          </div> <!-- row --> 
+          <div class="row"> 
+            <div class="col-md-12">
+              <ul class="list-inline tb_btns">
+          <?php
+          if(!empty($multi_interpretation))
+          {   
+            foreach($multi_interpretation as $m_interp)
+            {
+              ?>
+               <li><a href="javascript:void(0);"  onclick="change_interpretation_data(<?php echo $m_interp['id']; ?>)"><?php echo $m_interp['title']; ?></a></li>
+              <?php
+            } 
+          }
+          ?> 
+            </ul>
+          </div>
+        </div>
+        
+
+
+          
+             
+          
+      </div> <!-- modal-body --> 
+
+      <div class="modal-footer"> 
+         <input type="submit"  class="btn-update" name="submit" value="Save" />
+         <button type="button" class="btn-cancel" data-dismiss="modal">Close</button>
+      </div>
+</form>     
+
+<script>  
+  CKEDITOR.replace( 'interpretation_data' );
+ 
+$("#interpretation_form").on("submit", function(event) { 
+  event.preventDefault(); 
+
+for (instance in CKEDITOR.instances)
+CKEDITOR.instances[instance].updateElement();
+
+  $('#overlay-loader').show();
+  var ids = $('#type_id').val();
+  if(ids!="" && !isNaN(ids))
+  { 
+    var path = 'add_interpretation/'+ids;
+    var msg = 'Interpretation successfully updated.';
+  }
+  else
+  {
+    var path = 'add_interpretation/';
+    var msg = 'Interpretation successfully created.';
+  } 
+  //alert('ddd');return false;
+  $.ajax({
+    url: "<?php echo base_url('test/'); ?>"+path,
+    type: "post",
+    data: $(this).serialize(),
+    success: function(result) {
+      if(result==1)
+      {
+        $('#load_add_interpretation_modal_popup').modal('hide');
+        flash_session_msg(msg);  
+      } 
+      else
+      {
+        $("#load_add_interpretation_modal_popup").html(result);
+      }       
+      $('#overlay-loader').hide();
+    }
+  });
+}); 
+
+
+function change_interpretation_data(multi_inter_id)
+{
+  $.ajax({
+    url: '<?php echo base_url("test/multi_interpretation_change_data/"); ?>'+multi_inter_id, 
+    success: function(result) 
+    {
+       //$('#interpretation_data').val(result);
+       CKEDITOR.instances['interpretation_data'].setData(result)
+    }   
+  });
+}
+  
+
+
+</script>  
+
+<script>
+    $(document).ready(function(){
+      $('.tb_btns > li:first-child > a').click(function(){
+        $('.tb_btns > li:first-child > a').addClass('tb_btns_green');
+        $('.tb_btns > li:nth-child(2) > a').removeClass('tb_btns_green');
+        $('.tb_btns > li:nth-child(3) > a').removeClass('tb_btns_green');
+        $('.tb_btns > li:last-child > a').removeClass('tb_btns_green');
+      });
+      $('.tb_btns > li:nth-child(2) > a').click(function(){
+        $('.tb_btns > li:first-child > a').removeClass('tb_btns_green');
+        $('.tb_btns > li:nth-child(2) > a').addClass('tb_btns_green');
+        $('.tb_btns > li:nth-child(3) > a').removeClass('tb_btns_green');
+        $('.tb_btns > li:last-child > a').removeClass('tb_btns_green');
+      });
+      $('.tb_btns > li:nth-child(3) > a').click(function(){
+        $('.tb_btns > li:first-child > a').removeClass('tb_btns_green');
+        $('.tb_btns > li:nth-child(2) > a').removeClass('tb_btns_green');
+        $('.tb_btns > li:nth-child(3) > a').addClass('tb_btns_green');
+        $('.tb_btns > li:last-child > a').removeClass('tb_btns_green');
+      });
+      $('.tb_btns > li:last-child > a').click(function(){
+        $('.tb_btns > li:first-child > a').removeClass('tb_btns_green');
+        $('.tb_btns > li:nth-child(2) > a').removeClass('tb_btns_green');
+        $('.tb_btns > li:nth-child(3) > a').removeClass('tb_btns_green');
+        $('.tb_btns > li:last-child > a').addClass('tb_btns_green');
+      });
+    });
+  </script>
+<!-- Delete confirmation box -->  
+<!-- Delete confirmation end --> 
+        </div><!-- /.modal-content -->
+    
+</div><!-- /.modal-dialog -->

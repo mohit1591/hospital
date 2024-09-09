@@ -1,0 +1,105 @@
+<html>
+<head>
+<title>Test Report</title>
+<style>
+	page {
+	  background: white;
+	  display: block;
+	  margin: 0 auto;
+	  margin-bottom: 0.5cm;
+	  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+	}
+	page[size="A4"] {  
+	  width: 2in;
+	  height: 4in; 
+	  padding: 1em;
+	  font-size:13px;
+	}
+</style>
+</head>
+<body style="background: rgb(204,204,204);font-family:sans-serif, Arial;color:#333;">
+
+	<page size="A4">
+		
+		<table width="100%" cellpadding="4px" cellspacing="0" border="0" style="border-collapse:collapse;">
+			<tr><td valign="top" align="center"><h4 style="margin:0">Health Home</h4></td></tr>
+			<tr><td valign="top" align="center" style="font-size:12px;">OPP. Rosera Block, Samastiple, Bihar</td></tr>
+		</table>
+		
+		<table width="100%" cellpadding="4px" cellspacing="0" border="0" style="border-collapse:collapse;margin-top:3%;">
+			<tr><td valign="top" align="center" style="border-bottom:1px solid #000"><h3 style="margin:0">Cash Receipt</h3></td></tr>
+			<tr>
+				<td valign="top" align="center" style="font-size:12px;">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<td valign="top" align="left"><b>Name:</b></td>
+							<td valign="top" align="left">{patient_name}</td>
+						</tr>
+						<tr>
+							<td valign="top" align="left"><b>Mobile:</b></td>
+							<td valign="top" align="left">{mobile_no}</td>
+						</tr> 
+						<tr>
+							<td valign="top" align="left"><b>Invoice No.:</b></td>
+							<td valign="top" align="left">{invoice_no}</td>
+						</tr>
+						<tr>
+							<td valign="top" align="left"><b>Date:</b></td>
+							<td valign="top" align="left">{date}</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		
+		<table width="100%" cellpadding="4px" cellspacing="0" border="0" style="border-collapse:collapse;margin-top:3%;font-size:12px;border-top:1px solid #000;">
+			<tr>
+				<th valign="top" align="left">Sr. No.</th>
+				<th valign="top" align="left">Medcine</th>
+				<th valign="top" align="right">Price</th>
+			</tr>
+			<tr>
+				<td valign="top" align="left">{s_no}</td>
+				<td valign="top" align="left">{medicine_name}</td>
+				<td valign="top" align="right">{medicine_per_net_amount}</td>
+			</tr>
+		</table>
+		
+		<table width="100%" cellpadding="4px" cellspacing="0" border="0" style="border-collapse:collapse;margin-top:3%;font-size:12px;border-top:1px solid #000">
+			<tr>
+				<th valign="top" align="left">VAT:</th>
+				<td valign="top" align="right">{total_vat}</td>
+			</tr>
+			<tr>
+				<th valign="top" align="left">Discount:</th>
+				<td valign="top" align="right">{total_discount}</td>
+			</tr>
+			<tr>
+				<th valign="top" align="left">Total:</th>
+				<td valign="top" align="right">{total_net}</td>
+			</tr>
+			<tr>
+				<th valign="top" align="left">Received:</th>
+				<td valign="top" align="right">{paid_amount}</td>
+			</tr>
+			<tr>
+				<th valign="top" align="left">Balance:</th>
+				<td valign="top" align="right">{balance}</td>
+			</tr>
+			<tr>
+				<th valign="top" align="right" colspan="2">Signature</th>
+			</tr>
+		</table>
+		
+		
+		
+		
+		
+		
+		
+
+
+	</page>
+
+</body>
+</html>
